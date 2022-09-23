@@ -7,9 +7,7 @@ style.textContent=`@font-face {
     font-display: swap;
 }
 
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     display: flex;
@@ -26,6 +24,7 @@ body .cybr-btn + .cybr-btn {
 }
 
 .cybr-btn {
+    box-sizing: border-box;
     --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
     --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
     --primary-hue: 0;
@@ -198,10 +197,9 @@ body .cybr-btn + .cybr-btn {
 }
 `
   document.head.append(style);
-document.querySelectorAll('div').forEach(div => {
-    div.classList.add('cybr-btn')
+var div = document.querySelector('.uc_c_com');
+div.classList.add('cybr-btn');
     div.innerHTML += `<span aria-hidden></span>
   <span aria-hidden class="cybr-btn__glitch"></span>
   <span aria-hidden class="cybr-btn__tag">R25</span>`
-})
 })()
